@@ -6,9 +6,7 @@ namespace GCodeParser
 {
     public class CodeParser
     {
-        public static int AddTwoNumbers(int num1, int num2)
-        {
-            return num1 + num2;
-        }
+        //TODO main class with entry points
+        //everything important in subclasses
     }
 }
