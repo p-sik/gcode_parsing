@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCodeParser\GCodeParser.csproj">
+      <Project>{dd41c9dc-be21-4308-b2e4-2028ce24928b}</Project>
+      <Name>GCodeParser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
