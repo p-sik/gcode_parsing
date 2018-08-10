@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace GCodeParser
 {
     public class CodeParser
     {
-        //TODO main class with entry points
-        //everything important in subclasses
+        List<string> lines;
+
+        public CodeParser(List<string> codeLines)
+        {
+            lines = codeLines;            
+        }          
     }
 }
