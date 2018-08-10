@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeCleanerTest.cs" />
     <Compile Include="ParsingFilterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\GCodeParser\GCodeParser.csproj">
       <Project>{DD41C9DC-BE21-4308-B2E4-2028CE24928B}</Project>
       <Name>GCodeParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParserOutputDisplay\ParserOutputDisplay.csproj">
+      <Project>{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}</Project>
+      <Name>ParserOutputDisplay</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

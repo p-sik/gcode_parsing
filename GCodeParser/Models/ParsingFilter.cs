@@ -11,6 +11,11 @@ namespace GCodeParser.Models
             "G28", // endstop movement
             "G92", // extruder position set/reset
             "G90", // absolute positioning command
+            "G21", // metric values
+            "M82",
+            "M203",
+            "M117",
+            "M107",
             "\n", // empty lines
         };
 

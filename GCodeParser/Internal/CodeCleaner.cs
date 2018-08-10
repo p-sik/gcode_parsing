@@ -17,9 +17,16 @@ namespace GCodeParser.Internal
             cleanGCode = originalCode.Where(line =>
                 line.IndexOf(";") != 0 &&
                 !string.IsNullOrWhiteSpace(line) &&
-                !(line.Contains("G1") && !line.Contains("X") && !line.Contains("Y") && !line.Contains("Z"))
+                !(line.Contains("G1") && line.Contains("F"))
                 ).ToList();
 
+            List<string> maskList = new List<string>();
+
+
+            foreach (var filter in filters)
+            {
+                cleanGCode = cleanGCode.Where(x => !x.Contains(filter)).ToList();
+            }
             return cleanGCode;
         }
     }
