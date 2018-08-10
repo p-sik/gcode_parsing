@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GCodeParser.Models
 {
-    public class ParsingFilter
+    public static class ParsingFilter
     {
         static string[] defaultFilter = {
             "G28", // endstop movement
@@ -14,17 +15,26 @@ namespace GCodeParser.Models
             ";" // only comment lines
         };
 
-        private string[] filter;
+        private static string[] filter;
 
-        public string[] Filter
+        public static string[] Filter
         {
-            get => filter ?? defaultFilter;
+            get
+            {
+                if (filter == null)
+                {
+                    return defaultFilter;
+                }
+                else if (filter.All(x => string.IsNullOrWhiteSpace(x)))
+                {
+                    return defaultFilter;
+                }
+                else
+                {
+                    return filter;
+                }
+            }
             set => filter = value;
-        }
-
-        public ParsingFilter(params string[] filteredCommands)
-        {
-            filter = new string[filteredCommands.Length];
         }
     }
 }
