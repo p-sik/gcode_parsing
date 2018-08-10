@@ -12,7 +12,6 @@ namespace GCodeParser.Models
             "G92", // extruder position set/reset
             "G90", // absolute positioning command
             "\n", // empty lines
-            ";" // only comment lines
         };
 
         private static string[] filter;

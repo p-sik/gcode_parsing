@@ -13,7 +13,7 @@ namespace ParserTests
         {
             var actualFilter = ParsingFilter.Filter;
 
-            string[] expected = { "G28", "G92", "G90", "\n", ";" };
+            string[] expected = { "G28", "G92", "G90", "\n", };
 
             CollectionAssert.AreEqual(expected, actualFilter);
         }
@@ -32,7 +32,7 @@ namespace ParserTests
             string[] badFilters = { "", string.Empty, null, "     " };
             ParsingFilter.Filter = badFilters;
 
-            string[] expected = { "G28", "G92", "G90", "\n", ";" };
+            string[] expected = { "G28", "G92", "G90", "\n" };
 
             CollectionAssert.AreEqual(expected, ParsingFilter.Filter);
         }

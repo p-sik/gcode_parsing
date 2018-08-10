@@ -16,6 +16,5 @@ namespace GCodeParser
             lines = codeLines;            
         }
         
-
     }
 }
