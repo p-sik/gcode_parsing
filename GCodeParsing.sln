@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCodeParser", "GCodeParser\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserTests", "ParserTests\ParserTests.csproj", "{3AD1B5C3-F457-4FBC-879E-7EF91025940B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserOutputDisplay", "ParserOutputDisplay\ParserOutputDisplay.csproj", "{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputConsole", "OutputConsole\OutputConsole.csproj", "{F5998DDC-E501-41E6-8369-5CEF56EF4D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{3AD1B5C3-F457-4FBC-879E-7EF91025940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AD1B5C3-F457-4FBC-879E-7EF91025940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AD1B5C3-F457-4FBC-879E-7EF91025940B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD0E62C5-5ADC-4D8F-BDAF-9E204DD745E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5998DDC-E501-41E6-8369-5CEF56EF4D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5998DDC-E501-41E6-8369-5CEF56EF4D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5998DDC-E501-41E6-8369-5CEF56EF4D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5998DDC-E501-41E6-8369-5CEF56EF4D90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
