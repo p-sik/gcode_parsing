@@ -1,7 +1,6 @@
 # Reference file that I'll delete
 reference_GCodeParser.cs
 kalib_cil.gcode
-ParserOutputDisplay/
 
 # Created by https://www.gitignore.io/api/visualstudio,visualstudiocode
 
