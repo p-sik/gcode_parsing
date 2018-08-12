@@ -16,11 +16,11 @@ namespace OutputConsole
             Console.WriteLine("G-code parser: Work in progress!");
             Console.WriteLine("--------------------------------");
 
-            string fileName = "sample_code.gcode";
-            string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
-            List<string> allLines = OutputUtilities.ReadFile(fullPath);
+            // string fileName = "sample_code.gcode";
+            // string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
+            // List<string> allLines = OutputUtilities.ReadFile(fullPath);
 
-            CodeParser parser = new CodeParser(allLines);
+            // CodeParser parser = new CodeParser(allLines);
 
             Console.ReadKey();
         }

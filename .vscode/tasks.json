@@ -9,7 +9,18 @@
                 "build",
                 "${workspaceFolder}/OutputConsole/OutputConsole.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run console app",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/OutputConsole/bin/Debug/netcoreapp2.1/OutputConsole.dll"
+            ]            
         }
     ]
 }
