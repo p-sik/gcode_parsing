@@ -16,9 +16,9 @@ namespace OutputConsole
             Console.WriteLine("G-code parser: Work in progress!");
             Console.WriteLine("--------------------------------");
 
-            List<string> allLines = OutputUtilities.ReadFile(testPath);
+            // List<string> allLines = OutputUtilities.ReadFile(testPath);
 
-            CodeParser parser = new CodeParser(allLines);
+            // CodeParser parser = new CodeParser(allLines);
 
             Console.ReadKey();
         }

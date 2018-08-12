@@ -22,7 +22,6 @@ namespace GCodeParser.Internal
 
             List<string> maskList = new List<string>();
 
-
             foreach (var filter in filters)
             {
                 cleanGCode = cleanGCode.Where(x => !x.Contains(filter)).ToList();
