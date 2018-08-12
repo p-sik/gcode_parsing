@@ -12,7 +12,7 @@ namespace GCodeParserTest
         [TestMethod]
         public void CleansStartOfFile()
         {
-            string path = @"C:\Users\Peter\Documents\CodeProjects\GCodeParsing\kalib_cil.gcode";
+            string path = "sample_code.gcode";
             var allLines = OutputUtilities.ReadFile(path);
             var cleanLines = CodeCleaner.CleanUpCode(allLines);
 
@@ -23,7 +23,7 @@ namespace GCodeParserTest
         [TestMethod]
         public void CleansEndOfFile()
         {
-            string path = @"C:\Users\Peter\Documents\CodeProjects\GCodeParsing\kalib_cil.gcode";
+            string path = "sample_code.gcode";
             var allLines = OutputUtilities.ReadFile(path);
             var cleanLines = CodeCleaner.CleanUpCode(allLines);
 
