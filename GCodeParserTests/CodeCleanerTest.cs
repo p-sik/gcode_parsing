@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using GCodeParser.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,8 +13,9 @@ namespace GCodeParserTest
         [TestMethod]
         public void CleansStartOfFile()
         {
-            string path = "sample_code.gcode";
-            var allLines = OutputUtilities.ReadFile(path);
+            string fileName = "sample_code.gcode";
+            string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
+            var allLines = OutputUtilities.ReadFile(fullPath);
             var cleanLines = CodeCleaner.CleanUpCode(allLines);
 
             string expectedFirstLine = "G0 F10500 X57.967 Y78.308 Z0.300";
@@ -23,8 +25,9 @@ namespace GCodeParserTest
         [TestMethod]
         public void CleansEndOfFile()
         {
-            string path = "sample_code.gcode";
-            var allLines = OutputUtilities.ReadFile(path);
+            string fileName = "sample_code.gcode";
+            string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
+            var allLines = OutputUtilities.ReadFile(fullPath);
             var cleanLines = CodeCleaner.CleanUpCode(allLines);
 
             string expectedLastLine = "M84                            ; steppers off";
