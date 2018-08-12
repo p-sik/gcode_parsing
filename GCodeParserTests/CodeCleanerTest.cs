@@ -4,7 +4,7 @@ using GCodeParser.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OutputConsole;
 
-namespace ParserTests
+namespace GCodeParserTest
 {
     [TestClass]
     public class CodeCleanerTest
@@ -24,7 +24,7 @@ namespace ParserTests
         public void CleansEndOfFile()
         {
             string path = @"C:\Users\Peter\Documents\CodeProjects\GCodeParsing\kalib_cil.gcode";
-            var allLines = OutputConsole.ReadFile(path);
+            var allLines = OutputUtilities.ReadFile(path);
             var cleanLines = CodeCleaner.CleanUpCode(allLines);
 
             string expectedLastLine = "M84                            ; steppers off";
