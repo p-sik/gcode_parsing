@@ -12,12 +12,9 @@ namespace GCodeParserTest
     public class InstructionExtractorTest
     {
         [TestMethod]
-        public void ExtractsValuesForInstruction(){
-
-            string fileName = "sample_code.gcode";
-            string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
-            var allLines = OutputUtilities.ReadFile(fullPath);
-            var cleanLines = CodeCleaner.CleanUpCode(allLines);
+        public void ExtractsValuesForInstructionOnCorrect()
+        {
+            List<string> cleanLines = SetupGCode();
 
             InstructionParameterExtractor extractor = new InstructionParameterExtractor(cleanLines, null);
             var actual = extractor.ExtractParameterValues("M190");
@@ -26,5 +23,25 @@ namespace GCodeParserTest
 
             CollectionAssert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void ThrowsExceptionOnWrongInstruction()
+        {
+            var cleanLines = SetupGCode();
+
+            InstructionParameterExtractor extractor = new InstructionParameterExtractor(cleanLines, null);
+
+            Assert.ThrowsException<FormatException>(() => extractor.ExtractParameterValues("ABCDEfGHIJH"));
+        }
+
+        private static List<string> SetupGCode()
+        {
+            string fileName = "sample_code.gcode";
+            string fullPath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, fileName);
+            var allLines = OutputUtilities.ReadFile(fullPath);
+            var cleanLines = CodeCleaner.CleanUpCode(allLines);
+            return cleanLines;
+        }
+
     }
 }

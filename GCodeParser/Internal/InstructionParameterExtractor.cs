@@ -6,6 +6,7 @@ namespace GCodeParser.Internal
 {
     public class InstructionParameterExtractor
     {
+        //TODO process all the instructions in 1 method
         List<string> gcode;
         List<string> toolInstructions;
         public Dictionary<string, List<float>> ToolParameters;
@@ -21,9 +22,20 @@ namespace GCodeParser.Internal
             List<float> outputValues = new List<float>();
             parameterValues = gcode.Where(x => x.Contains(parameter)).ToList();
 
+            if (parameterValues.Count == 0)
+            {
+                throw new FormatException("No matches in gcode");
+            }
+
             foreach (var value in parameterValues)
             {
-                float numericValue = float.Parse(value.Substring(6));
+                string numberFromString = value.Substring(6);
+                float numericValue;
+                bool isParseSuccessful = float.TryParse(numberFromString, out numericValue);
+                if (!isParseSuccessful)
+                {
+                    throw new ArgumentException("Parameter parsing unsuccesfull.");
+                }
                 outputValues.Add(numericValue);
             }
 
