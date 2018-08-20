@@ -10,7 +10,6 @@ namespace OutputConsole
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("G-code parser: Work in progress!");

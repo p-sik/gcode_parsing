@@ -8,7 +8,6 @@ namespace GCodeParser.Internal
 {
     public class CodeCleaner
     {
-        //TODO test and finish the clean-up
         public static List<string> CleanUpCode(List<string> originalCode)
         {
             List<string> cleanGCode = new List<string>(originalCode.Count);
